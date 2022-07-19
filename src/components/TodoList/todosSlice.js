@@ -1,7 +1,7 @@
 // const initState = [
-//   { id: 1, name: 'Learn Yoga', completed: false, priority: 'Medium' },
-//   { id: 2, name: 'Learn Redux', completed: true, priority: 'High' },
-//   { id: 3, name: 'Learn JavaScript', completed: false, priority: 'Low' },
+// { id: 1, name: 'Learn Yoga', completed: false, priority: 'Medium' },
+// { id: 2, name: 'Learn Redux', completed: true, priority: 'High' },
+// { id: 3, name: 'Learn JavaScript', completed: false, priority: 'Low' },
 // ];
 
 // const todoListReducer = (state = initState, action) => {
@@ -26,7 +26,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const todosSlice = createSlice({
   name: "todoList",
-  initialState: { status: "idle", todos: [] },
+  initialState: {
+    status: "idle",
+    todos: [
+      { id: 1, name: "Learn React", completed: false, priority: "Medium" },
+      { id: 2, name: "Learn Redux", completed: true, priority: "High" },
+      { id: 3, name: "Learn JavaScript", completed: false, priority: "Low" },
+    ],
+  },
   reducers: {
     // IMMER
     addTodo: (state, action) => {
